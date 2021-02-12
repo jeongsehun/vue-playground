@@ -18,12 +18,11 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Home",
-  data() {
-    return {
-      videos: this.$store.state.videos,
-    };
+  computed: {
+    ...mapState(["videos"]),
   },
 };
 </script>
