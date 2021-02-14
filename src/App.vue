@@ -1,7 +1,11 @@
 <template>
   <v-app>
     <v-app-bar elevation="1" fixed app>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title
+        style="cursor: pointer"
+        v-text="title"
+        @click="$router.push('/')"
+      />
       <v-spacer />
       <v-btn outlined>Sign in</v-btn>
     </v-app-bar>
