@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    videos: [],
+    videos: []
   },
   mutations: {
     SET_VIDEOS(state, videos) {
@@ -16,7 +16,7 @@ export default new Vuex.Store({
   actions: {
     loadVideos({ commit }) {
       const { videos } = dummyData;
-      commit('SET_VIDEOS', videos);
+      commit("SET_VIDEOS", videos);
     }
   },
   modules: {}

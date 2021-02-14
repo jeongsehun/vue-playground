@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <youtube :video-id="videoId" ref="youtube"></youtube>
-    <h1>{{ video.name }} - {{ video.title }}</h1>
-    <div v-html="video.description"></div>
-  </div>
+  <v-row justify="center" align="center">
+    <v-col cols="12" sm="8" md="6">
+      <youtube :video-id="videoId" ref="youtube"></youtube>
+      <h1>{{ video.title }} - {{ video.name }}</h1>
+      <div v-html="video.description"></div>
+    </v-col>
+  </v-row>
 </template>
 <script>
 import Vue from "vue";

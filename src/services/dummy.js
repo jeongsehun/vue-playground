@@ -39,6 +39,6 @@ export default {
       description: `<p>Live on SNL</p>`,
       thumbnail: require("@/assets/logo.png"),
       url: "https://youtu.be/hq-8wDOqRPU"
-    },
+    }
   ]
-}
+};

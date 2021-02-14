@@ -1,37 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav"><router-link to="/">Home</router-link></div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-app-bar elevation="1" fixed app>
+      <v-toolbar-title v-text="title" />
+      <v-spacer />
+      <v-btn outlined>Sign in</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <v-footer absolute>
+      <span>&copy; {{ new Date().getFullYear() }} Sehun Jeong</span>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
 export default {
+  name: "App",
+  data: () => ({
+    title: "MY X SET",
+  }),
   created() {
     this.$store.dispatch("loadVideos");
   },
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
