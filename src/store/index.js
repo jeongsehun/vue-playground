@@ -14,6 +14,17 @@ export default new Vuex.Store({
       let videos = state.videos.concat(video);
       state.videos = videos;
     },
+    DELETE_VIDEO(state, videoId) {
+      let videos = state.videos.filter(v => v.id != videoId);
+      state.videos = videos;
+    },
+    EDIT_VIDEO(state, video) {
+      state.videos.forEach(v => {
+        if (v.id == video.id) {
+          v = video;
+        }
+      })
+    },
     SET_VIDEOS(state, videos) {
       state.videos = videos;
     },
@@ -29,6 +40,12 @@ export default new Vuex.Store({
   actions: {
     createVideo({ commit }, video) {
       commit('ADD_VIDEO', video);
+    },
+    deleteVideo({ commit }, video) {
+      commit('DELETE_VIDEO', video.id);
+    },
+    editVideo({ commit }, video) {
+      commit("EDIT_VIDEO", video);
     },
     loadVideos({ commit }) {
       const { videos } = dummyData;
