@@ -10,6 +10,10 @@ export default new Vuex.Store({
     playedVideos: []
   },
   mutations: {
+    ADD_VIDEO(state, video) {
+      let videos = state.videos.concat(video);
+      state.videos = videos;
+    },
     SET_VIDEOS(state, videos) {
       state.videos = videos;
     },
@@ -23,6 +27,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    createVideo({ commit }, video) {
+      commit('ADD_VIDEO', video);
+    },
     loadVideos({ commit }) {
       const { videos } = dummyData;
       commit("SET_VIDEOS", videos);

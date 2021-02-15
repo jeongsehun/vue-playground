@@ -7,6 +7,8 @@
         @click="$router.push('/')"
       />
       <v-spacer />
+      <v-btn :to="{ name: 'VideoCreate' }" outlined>Add Video</v-btn>
+      <v-spacer />
       <v-btn outlined>Sign in</v-btn>
     </v-app-bar>
 
